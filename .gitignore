@@ -1,0 +1,14 @@
+/target/
+.idea
+.classpath
+.project
+.settings/
+*.log
+*.1
+*.properties
+config/
+users/
+database/
+db/
+airbnb.iml
+document/
