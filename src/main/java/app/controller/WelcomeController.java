@@ -2,14 +2,13 @@ package app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServlet;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class WelcomeController extends HttpServlet {
+public class WelcomeController {
 
-    @RequestMapping("index")
-    public String welcome() {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String showWelcome() {
         return "index";
     }
 

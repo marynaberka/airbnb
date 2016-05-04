@@ -11,6 +11,7 @@
 
     <properties>
         <spring.version>4.1.6.RELEASE</spring.version>
+        <tomcat.version>8.0.33</tomcat.version>
     </properties>
 
     <dependencies>
@@ -100,6 +101,16 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <url>http://localhost:8080/manager</url>
+                    <server>localhost</server>
+                    <username>tadmin</username>
+                    <password>tadmin</password>
                 </configuration>
             </plugin>
         </plugins>
