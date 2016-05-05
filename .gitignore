@@ -12,3 +12,4 @@ database/
 db/
 airbnb.iml
 document/
+*.db
