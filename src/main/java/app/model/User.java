@@ -4,30 +4,28 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-@Component
+@Entity
+@Table(name = "Users")
 public class User {
 
-    //@Getter(AccessLevel.PUBLIC) @Setter(AccessLevel.PUBLIC)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUser;
-    //@Getter @Setter
     @NotEmpty(message = "Please, enter your name.")
     @Size(min = 2, max = 20, message = "Name must contain 2-20 characters.")
     private String userName;
-    //@Getter @Setter
     @NotEmpty(message = "Please, enter your surname.")
     @Size(min = 2, max = 20, message = "Surname must contain 2-20 characters.")
     private String userSurname;
-    //@Getter @Setter
     @NotEmpty(message = "Please, enter your email.")
     @Email
     private String email;
-    //@Getter @Setter
     @NotEmpty(message = "Please, enter your city.")
     @Size(min = 2, max = 30, message = "City must contain 2-30 characters.")
     private String userCity;
-    //@Getter @Setter
     private boolean hostUser;
 
     public User() {

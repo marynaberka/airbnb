@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.sql.*;
 import java.util.List;
 
-@Component
+//@Component
 public class UserDAO extends JdbcDaoSupport {
 
     public void addNewUser(User user) {

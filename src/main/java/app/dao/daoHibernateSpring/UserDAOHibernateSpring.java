@@ -12,9 +12,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-@Repository /*Spring Annotation for DAO @Component.*/
+@Repository
 public class UserDAOHibernateSpring {
-    /*Using Spring along with Hibernate.*/
+
     @Autowired
     private SessionFactory sessionFactory;
 

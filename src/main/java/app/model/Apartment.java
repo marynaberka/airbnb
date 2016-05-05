@@ -2,8 +2,10 @@ package app.model;
 
 import app.service.Validation;
 
+import javax.persistence.Embeddable;
 import java.util.Date;
 
+@Embeddable
 public class Apartment {
     private User user;
     private String city;

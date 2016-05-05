@@ -1,7 +1,9 @@
 package app.model;
 
+import javax.persistence.Embeddable;
 import java.util.Date;
 
+@Embeddable
 public class Reservation {
     private Apartment apartment;
     private Date moveInDate;
