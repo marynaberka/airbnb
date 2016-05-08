@@ -13,3 +13,4 @@ db/
 airbnb.iml
 document/
 *.db
+*.script

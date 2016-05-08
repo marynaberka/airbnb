@@ -4,11 +4,12 @@ import app.model.User;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.List;
 
-//@Component
+@Repository
 public class UserDAO extends JdbcDaoSupport {
 
     public void addNewUser(User user) {
@@ -61,7 +62,7 @@ public class UserDAO extends JdbcDaoSupport {
         @Override
         public User mapRow(ResultSet resultSet, int rowNumber) throws SQLException {
             User user = new User();
-            user.setId(resultSet.getInt("idUser"));
+            user.setIdUser(resultSet.getInt("idUser"));
             user.setUserName(resultSet.getString("userName"));
             //user.setUserSurname(resultSet.getString("userSurname"));
             //user.setUserCity(resultSet.getString("userCity"));

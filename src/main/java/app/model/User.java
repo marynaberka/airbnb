@@ -1,30 +1,19 @@
 package app.model;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.stereotype.Component;
-
-import javax.persistence.*;
-import javax.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "Users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUser;
-    @NotEmpty(message = "Please, enter your name.")
-    @Size(min = 2, max = 20, message = "Name must contain 2-20 characters.")
     private String userName;
-    @NotEmpty(message = "Please, enter your surname.")
-    @Size(min = 2, max = 20, message = "Surname must contain 2-20 characters.")
     private String userSurname;
-    @NotEmpty(message = "Please, enter your email.")
-    @Email
     private String email;
-    @NotEmpty(message = "Please, enter your city.")
-    @Size(min = 2, max = 30, message = "City must contain 2-30 characters.")
     private String userCity;
     private boolean hostUser;
 
@@ -39,11 +28,11 @@ public class User {
         this.hostUser = false;
     }
 
-    public int getId() {
+    public int getIdUser() {
         return idUser;
     }
 
-    public void setId(int idUser) {
+    public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 

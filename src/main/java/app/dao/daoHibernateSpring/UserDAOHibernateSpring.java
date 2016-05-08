@@ -4,6 +4,7 @@ import app.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -31,6 +32,7 @@ public class UserDAOHibernateSpring {
         from one object to another object. That means that you must have
         an old_modelObject table in DB where you keep modelObjects.
         If you need to insert modelObject into DB, use session.save(modelObject).*/
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
         session.save(user);
@@ -104,7 +106,7 @@ public class UserDAOHibernateSpring {
         @Override
         public User mapRow(ResultSet resultSet, int rowNumber) throws SQLException {
             User user = new User();
-            user.setId(resultSet.getInt("idUser"));
+            user.setIdUser(resultSet.getInt("idUser"));
             user.setUserName(resultSet.getString("userName"));
             //user.setUserSurname(resultSet.getString("userSurname"));
             //user.setUserCity(resultSet.getString("userCity"));
