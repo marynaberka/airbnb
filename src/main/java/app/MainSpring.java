@@ -28,13 +28,13 @@ public class MainSpring {
         //User user2 = new User("Lisa", "Simpson", "Lisa@org.usa", "SanFrancisco");
         User user2 = appContext.getBean("user", User.class);
         user2.setEmail("Lisa@org.usa");
-        user2.setUserName("Marge");
+        user2.setUserName("Bart");
         user2.setUserSurname("Simpson");
         user2.setUserCity("SanFrancisco");
 
         userDAO.addNewUser(user2);
 
-        System.out.println(userDAO.getAllUsers().toString());
+        System.out.println(userDAO.getAllUsers());
 
         //System.out.println(userDAO.getAllUsers());
 

@@ -24,16 +24,16 @@
         <property name="password" value="root"/>-->
 
         <!--H2 Database-->
-        <property name="driverClassName" value="org.h2.Driver"/>
+        <!--<property name="driverClassName" value="org.h2.Driver"/>
         <property name="url" value="jdbc:h2:file:./airbnb-database;INIT=CREATE SCHEMA IF NOT EXISTS airbnb;DB_CLOSE_DELAY=-1"/>
         <property name="username" value="sa"/>
-        <property name="password" value="sa"/>
+        <property name="password" value="sa"/>-->
 
         <!--HSQLDB-->
-        <!--<property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
         <property name="url" value="jdbc:hsqldb:file:./airbnb-database;shutdown=false"/>
         <property name="username" value="SA"/>
-        <property name="password" value=""/>-->
+        <property name="password" value=""/>
     </bean>
 
     <!--<bean id="welcomeController" class="app.controller.WelcomeController"/>-->
@@ -50,7 +50,7 @@
         <property name="packagesToScan" value="app.model"/>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
                 <prop key="hibernate.cache.use_second_level_cache">false</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>

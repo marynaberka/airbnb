@@ -14,3 +14,4 @@ airbnb.iml
 document/
 *.db
 *.script
+*.lck
