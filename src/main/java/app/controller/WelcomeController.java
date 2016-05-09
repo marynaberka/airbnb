@@ -5,12 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class WelcomeController {
+public class WelcomeController{
 
-    /*@Autowired
-    WebApplicationContext applicationContext;*/
-
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "index"})
     public String showWelcome() {
         return "index";
     }

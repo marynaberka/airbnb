@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
     <title>Welcome to Airbnb Home Page</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="mainstyle.css" type="text/css">
 </head>
 
 <body>

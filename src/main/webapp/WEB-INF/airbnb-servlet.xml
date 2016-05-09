@@ -12,16 +12,11 @@
       http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 
     <context:component-scan base-package="app"/>
-    <!--<context:annotation-config/>-->
-    <mvc:annotation-driven/>
+    <context:annotation-config/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <!-- The application context definition for the airbnb DispatcherServlet -->
-    <bean name="/index.jsp" class="app.controller.WelcomeController"/>
-
 
 </beans>
