@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
     <title>Welcome to Airbnb Home Page</title>
-    <link rel="stylesheet" href="mainstyle.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <li type="disc"><a href="index.jsp">Airbnb Welcome page</a>
         <li><a href="registration.jsp">Register</a>
         <li><a href="login.jsp">Login</a>
-        <li><form method="get" action="CitiesController"><a href="cities.jsp"></form>Show Available Cities</a>
+        <%--<li><form method="get" action="CitiesController"><a href="cities.jsp"></form>Show Available Cities</a>--%>
         <li><a href="search.jsp">Search</a>
         <li><a href="reservations.jsp">Reservations</a>
         <li><a href="contacts.jsp">Contacts</a>
