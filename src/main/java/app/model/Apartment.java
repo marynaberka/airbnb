@@ -1,33 +1,43 @@
 package app.model;
 
 import app.service.Validation;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-@Embeddable
+@Entity
 public class Apartment {
-    private User user;
-    private String city;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idApartment;
+    private String userName;
+    @NotEmpty(message = "Please, enter apartment city.")
+    @Size(min = 2, max = 30, message = "City must contain 2-30 characters.")
+    private String cityApartment;
     private Enum ApartmentType;
     private Date startDate;
     private Date endDate;
+    @OneToMany
+    private List<Reservation> reservations;
 
-    public Apartment(String city, Enum apartmentType, Date startDate, Date endDate) {
-        this.city = city;
+    public Apartment(String cityApartment, Enum apartmentType, Date startDate, Date endDate) {
+        this.cityApartment = cityApartment;
         ApartmentType = apartmentType;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.reservations = new ArrayList<>();
     }
 
-    public String getCity() {
-        return city;
+    public String getCityApartment() {
+        return cityApartment;
     }
 
-    public void setCity(String city) {
-        if (Validation.getValidation().validCityName(city)) {
-            this.city = city;
-        }
+    public void setCityApartment(String cityApartment) {
+        this.cityApartment = cityApartment;
     }
 
     public Enum getApartmentType() {
@@ -38,12 +48,20 @@ public class Apartment {
         ApartmentType = apartmentType;
     }
 
-    public User getUser() {
-        return user;
+    public int getIdApartment() {
+        return idApartment;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setIdApartment(int idApartment) {
+        this.idApartment = idApartment;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Date getStartDate() {
@@ -60,5 +78,24 @@ public class Apartment {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    @Override
+    public String toString() {
+        return "Apartment{" +
+                "endDate=" + endDate +
+                ", startDate=" + startDate +
+                ", ApartmentType=" + ApartmentType +
+                ", cityApartment='" + cityApartment + '\'' +
+                ", userName='" + userName + '\'' +
+                '}';
     }
 }

@@ -3,11 +3,10 @@ package app.model;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User {
@@ -28,6 +27,8 @@ public class User {
     @Size(min = 2, max = 30, message = "City must contain 2-30 characters.")
     private String userCity;
     private boolean hostUser;
+    @OneToMany
+    private List<Apartment> apartments;
 
     public User() {
     }
@@ -38,6 +39,7 @@ public class User {
         this.email = email;
         this.userCity = userCity;
         this.hostUser = false;
+        this.apartments = new ArrayList<>();
     }
 
     public int getIdUser() {
@@ -86,6 +88,14 @@ public class User {
 
     public void setUserCity(String userCity) {
         this.userCity = userCity;
+    }
+
+    public List<Apartment> getApartments() {
+        return apartments;
+    }
+
+    public void setApartments(List<Apartment> apartments) {
+        this.apartments = apartments;
     }
 
     @Override

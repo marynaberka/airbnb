@@ -1,20 +1,25 @@
 package app.model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
-@Embeddable
+@Entity
 public class Reservation {
-    private Apartment apartment;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idReservation;
     private Date moveInDate;
     private Date moveOutDate;
 
-    public Apartment getRoom() {
-        return apartment;
+    public int getIdReservation() {
+        return idReservation;
     }
 
-    public void setRoom(Apartment apartment) {
-        this.apartment = apartment;
+    public void setIdReservation(int idReservation) {
+        this.idReservation = idReservation;
     }
 
     public Date getMoveInDate() {
@@ -32,4 +37,13 @@ public class Reservation {
     public void setMoveOutDate(Date moveOutDate) {
         this.moveOutDate = moveOutDate;
     }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "moveInDate=" + moveInDate +
+                ", moveOutDate=" + moveOutDate +
+                '}';
+    }
+
 }
