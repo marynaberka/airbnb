@@ -1,9 +1,13 @@
 package app.model;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
@@ -11,9 +15,17 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUser;
+    @NotEmpty(message = "Please, enter your name.")
+    @Size(min = 1, max = 20, message = "Name must contain 1-20 characters.")
     private String userName;
+    @NotEmpty(message = "Please, enter your surname.")
+    @Size(min = 1, max = 30, message = "Surname must contain 1-20 characters.")
     private String userSurname;
+    @NotEmpty(message = "Please, enter your email.")
+    @Email
     private String email;
+    @NotEmpty(message = "Please, enter your city.")
+    @Size(min = 2, max = 30, message = "City must contain 2-30 characters.")
     private String userCity;
     private boolean hostUser;
 
