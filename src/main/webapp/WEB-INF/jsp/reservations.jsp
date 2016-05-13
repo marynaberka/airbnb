@@ -6,7 +6,7 @@ pageEncoding="US-ASCII"%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
     <title>Make Reservation</title>
-    <link rel="stylesheet" href="mainstyle.css" type="text/css">
+    <link rel="stylesheet" href="../../resources/css/mainstyle.css" type="text/css">
 </head>
 <body>
     Hello, <c:out value="${param.userName}"></c:out>

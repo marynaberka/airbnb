@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
     <title>Edit User Info</title>
-    <link rel="stylesheet" href="mainstyle.css" type="text/css">
+    <link rel="stylesheet" href="../../resources/css/mainstyle.css" type="text/css">
 </head>
 
 <body>

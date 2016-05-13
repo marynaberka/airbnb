@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Create Host</title>
-<link rel="stylesheet" href="mainstyle.css" type="text/css">
+<link rel="stylesheet" href="../../resources/css/mainstyle.css" type="text/css">
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
