@@ -32,7 +32,7 @@ public class MainSpring {
         user2.setUserSurname("Simpson");
         user2.setUserCity("SanFrancisco");
 
-        userDAO.addNewUser(user2);
+        //userDAO.addNewUser(user2);
 
         System.out.println(userDAO.getAllUsers());
 
