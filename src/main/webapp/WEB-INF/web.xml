@@ -9,7 +9,7 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-<!--    <servlet>
+    <servlet>
         <servlet-name>jersey-servlet</servlet-name>
         <servlet-class>
             com.sun.jersey.spi.spring.container.servlet.SpringServlet
@@ -22,22 +22,18 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>jersey-servlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>-->
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
 
-    <servlet>
+    <!--<servlet>
         <servlet-name>airbnb</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!--<init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>WEB-INF/airbnb-servlet.xml</param-value>
-        </init-param>-->
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>airbnb</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
     <context-param>
         <param-name>contextConfigLocation</param-name>

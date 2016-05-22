@@ -14,6 +14,14 @@ public class UserService {
     @Autowired
     private UserDAOHibernateSpring userDAOHibernateSpring;
 
+    public String getAll(){
+        return "Get All!";
+}
+
+    public List<User> getAllUsers(){
+        return userDAOHibernateSpring.getAllUsers();
+    }
+
     public void createUser(User user) {
         userDAOHibernateSpring.addNewUser(user);
     }
